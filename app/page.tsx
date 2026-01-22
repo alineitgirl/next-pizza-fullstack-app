@@ -1,4 +1,4 @@
-import { Categories, SortPopup, Title, TopBar } from "@/components/index";
+import { Categories, SortPopup, Title, TopBar, Filters } from "@/components/index";
 import { Container } from "@/components/index";
 
 export default function Home() {
@@ -9,6 +9,20 @@ export default function Home() {
 
     <TopBar />
 
-    <div style={{height: '3000px'}}></div>
+    <Container className="mt-10 pb-14">
+      <div className="flex gap-[60px]">
+        <div className="w-[250px]">
+           <Filters/>
+        </div>
+     
+
+      {/*Список товаров*/}
+      <div className="flex-1">
+        <div className="flex flex-col gap-16">
+        Список товаров
+        </div>
+      </div>
+      </div>
+    </Container>
   </>
 }
