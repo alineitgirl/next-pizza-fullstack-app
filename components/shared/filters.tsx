@@ -2,6 +2,7 @@ import React from 'react';
 import { Input, Title } from "@/components/index";
 import { FilterCheckbox } from "@/components/index";
 import { RangeSlider } from '@/components/index';
+import { CheckboxFiltersGroup } from './checkbox-filters-group';
 
 interface Props {
     className? : string;
@@ -26,6 +27,72 @@ export const Filters : React.FC<Props> = ({ className }) => {
 
                 <RangeSlider min={0} max={5000} step={10} value={[0, 5000]} />
             </div>
+
+            <CheckboxFiltersGroup 
+                title="Ингредиенты"
+                items={[
+                    {
+                        text: "Сырный соус",
+                        value: "1"
+                    }, 
+                    {
+                        text: "Моццарелла",
+                        value: "2"
+                    }, 
+                    {
+                        text: "Чеснок", 
+                        value: "3"
+                    }, 
+                    {
+                        text: "Солёные огурчики",
+                        value: "4"
+                    },
+                    {
+                        text: "Красный лук",
+                        value: "5"
+                    }, 
+                    {
+                        text: 'Томаты',
+                        value: '6',
+                    },
+                    {
+                        text: 'Кетчуп',
+                        value: '7',
+                    },
+                    {
+                        text: 'Маринованные огурцы',
+                        value: '8',
+                    }
+                ]}
+                defaultItems={[
+                    {
+                        text: "Сырный соус",
+                        value: "1"
+                    }, 
+                    {
+                        text: "Моццарелла",
+                        value: "2"
+                    }, 
+                    {
+                        text: "Чеснок", 
+                        value: "3"
+                    }, 
+                    {
+                        text: "Солёные огурчики",
+                        value: "4"
+                    },
+                    {
+                        text: "Красный лук",
+                        value: "5"
+                    }, 
+                    {
+                        text: 'Томаты',
+                        value: '6',
+                    }
+                ]}
+                limit={5}
+                searchInputPlaceholder="Поиск..."
+            />
         </div>
     )
 }

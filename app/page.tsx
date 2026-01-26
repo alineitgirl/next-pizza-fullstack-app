@@ -15,8 +15,6 @@ export default function Home() {
            <Filters/>
         </div>
      
-
-      {/*Список товаров*/}
       <div className="flex-1">
         <div className="flex flex-col gap-16">
         Список товаров
