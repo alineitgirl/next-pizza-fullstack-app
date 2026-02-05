@@ -1,9 +1,11 @@
+'use client';
 import { Ingredient } from "@/lib/generated/prisma/client";
 import { Api } from "@/services/api-client";
 import React from 'react';
 
 interface ReturnProps {
     ingredients: Ingredient[];
+    loading : boolean;
 }
 
 export const useIngredients = () : ReturnProps => {
@@ -25,5 +27,5 @@ export const useIngredients = () : ReturnProps => {
         fetchIngredients();
     }, []);
 
-    return { ingredients };
+    return { ingredients, loading };
 };

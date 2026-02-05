@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Input, Title } from "@/components/index";
 import { FilterCheckbox } from "@/components/index";
@@ -11,7 +12,7 @@ interface Props {
 
 export const Filters : React.FC<Props> = ({ className }) => {
 
-    const { ingredients } = useIngredients();
+    const { ingredients, loading } = useIngredients();
 
     const items = ingredients.map((item) => ({ value: item.id.toString(), text: item.name }));
     return (
@@ -39,6 +40,7 @@ export const Filters : React.FC<Props> = ({ className }) => {
                 defaultItems={items.slice(0, 6)}
                 limit={5}
                 searchInputPlaceholder="Поиск..."
+                loading={loading}
             />
         </div>
     )

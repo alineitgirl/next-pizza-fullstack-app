@@ -12,7 +12,7 @@ interface Props {
     items : Item[];
     defaultItems : Item[];
     limit? : number;
-    loading? : boolean;
+    loading : boolean;
     searchInputPlaceholder? : string;
     onChange?: (values: string[]) => void;
     defaultValue? : string[];
@@ -38,7 +38,9 @@ export const CheckboxFiltersGroup : React.FC<Props> = ({
         return <div>
             <p className='font-bold mb-3'>{title}</p>
 
-            <Skeleton className='h-6 mb-5 rounded-[8px]'/>
+            {...Array(limit).fill(0).map((_, index) => (
+                <Skeleton key={index} className='h-6 mb-4 rounded-[8px]'/>))}   
+            <Skeleton className='h-8 w-[150px] rounded-[8px]'/>  
         </div>
     }
 
